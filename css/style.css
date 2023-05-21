@@ -105,7 +105,10 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   margin: 0 0 67px 0;
 }
-.choose-difficulty__difficulty-column {
+.choose-difficulty__real-radio {
+  display: none;
+}
+.choose-difficulty__custom-radio {
   height: 98px;
   width: 98px;
   background: #FFFFFF;

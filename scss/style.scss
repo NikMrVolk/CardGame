@@ -66,8 +66,10 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 			justify-content: center;
 			margin: 0 0 67px 0;
 		}
-
-		&__difficulty-column {
+		&__real-radio {
+			display: none;
+		}
+		&__custom-radio {
 			height: 98px;
 			width: 98px;
 			background: #FFFFFF;

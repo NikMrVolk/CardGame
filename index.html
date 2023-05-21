@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,28 @@
 	<link rel="stylesheet" href="./css/style.css">
 	<title>CardGame</title>
 </head>
+
 <body>
 	<div class="content">
-		<div class="choose-difficulty">
+		<form class="choose-difficulty">
 			<div class="choose-difficulty__title">Выбери сложность</div>
 			<div class="choose-difficulty__difficulty-row">
-				<div class="choose-difficulty__difficulty-column">1</div>
-				<div class="choose-difficulty__difficulty-column">2</div>
-				<div class="choose-difficulty__difficulty-column">3</div>
+				<label>
+					<input class="choose-difficulty__real-radio" value="1" name="level" type="radio">
+					<span class="choose-difficulty__custom-radio">1</span>
+				</label>
+				<label>
+					<input class="choose-difficulty__real-radio" value="2" name="level" type="radio">
+					<span class="choose-difficulty__custom-radio">2</span>
+				</label>
+				<label>
+					<input class="choose-difficulty__real-radio" value="3" name="level" type="radio">
+					<span class="choose-difficulty__custom-radio">3</span>
+				</label>
 			</div>
-			<div class="choose-difficulty__start-button">Старт</div>
-		</div>
+			<button class="choose-difficulty__start-button">Старт</button>
+		</form>
 	</div>
 </body>
+
 </html>
