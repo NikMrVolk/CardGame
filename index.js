@@ -1,10 +1,10 @@
 const app = document.querySelector('.content')
 
-let gameTime
+// let gameTime
 let difficultyLevel
-let gameStatus
-let generatedCards
-let choosedCards
+// let gameStatus
+// let generatedCards
+// let choosedCards
 
 const startGame = () => {
 	const buttonStartGame = document.querySelector(
@@ -65,7 +65,3 @@ const renderApp = (getElementHTML) => {
 }
 
 renderApp(getdifficultyLevel)
-
-const add = (a, b) => {
-	return a + b + ''
-}
