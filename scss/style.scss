@@ -33,9 +33,9 @@ body {
 	line-height: 1;
 	font-size: 14px;
 	-ms-text-size-adjust: 100%;
-	-moz-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-	font-family: 'StratosSkyeng';
+	// -moz-text-size-adjust: 100%;
+	// -webkit-text-size-adjust: 100%;
+	font-family: 'StratosSkyeng', Arial, sans-serif;
 }
 input,
 button,
@@ -52,7 +52,6 @@ button::-moz-focus-inner {
 	padding: 0;
 	border: 0;
 }
-a,
 a:visited {
 	text-decoration: none;
 }
@@ -84,7 +83,6 @@ h6 {
 .content {
 	height: 100vh;
 	background: #004980;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;

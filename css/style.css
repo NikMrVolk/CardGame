@@ -1,5 +1,7 @@
+/* stylelint-disable selector-class-pattern */
 @charset "UTF-8";
-/*Обнуление*/
+
+/* Обнуление */
 * {
 	padding: 0;
 	margin: 0;
@@ -7,8 +9,8 @@
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
 	box-sizing: border-box;
 }
 
@@ -33,13 +35,10 @@ html,
 body {
 	height: 100%;
 	width: 100%;
-	font-size: 100%;
 	line-height: 1;
 	font-size: 14px;
-	-ms-text-size-adjust: 100%;
-	-moz-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-	font-family: 'StratosSkyeng';
+	text-size-adjust: 100%;
+	font-family: StratosSkyeng, Arial, sans-serif;
 }
 
 input,
@@ -61,7 +60,6 @@ button::-moz-focus-inner {
 	border: 0;
 }
 
-a,
 a:visited {
 	text-decoration: none;
 }
@@ -88,11 +86,12 @@ h6 {
 	font-weight: 400;
 }
 
-/*--------------------*/
+/* -------------------- */
 @font-face {
-	font-family: 'StratosSkyeng';
-	src: url(../fonts/stratosskyeng-regular.otf);
+	font-family: StratosSkyeng;
+	src: url('../fonts/stratosskyeng-regular.otf');
 }
+
 .content {
 	height: 100vh;
 	background: #004980;
@@ -108,27 +107,31 @@ h6 {
 	border-radius: 12px;
 	padding: 52px 69px 48px;
 }
+
 .choose-difficulty__title {
 	font-size: 40px;
 	line-height: 48px;
 	text-align: center;
 	font-feature-settings: 'pnum' on, 'lnum' on;
 	color: #004980;
-	margin: 0 0 48px 0;
+	margin: 0 0 48px;
 }
+
 .choose-difficulty__difficulty-row {
 	display: flex;
 	gap: 24px;
 	justify-content: center;
-	margin: 0 0 67px 0;
+	margin: 0 0 67px;
 }
+
 .choose-difficulty__real-radio {
 	display: none;
 }
+
 .choose-difficulty__custom-radio {
 	height: 98px;
 	width: 98px;
-	background: #ffffff;
+	background: #fff;
 	border-radius: 12px;
 	font-size: 64px;
 	line-height: 72px;
@@ -137,6 +140,7 @@ h6 {
 	justify-content: center;
 	color: #0080c1;
 }
+
 .choose-difficulty__start-button {
 	width: 246px;
 	height: 50px;
@@ -148,5 +152,5 @@ h6 {
 	margin: 0 auto;
 	font-size: 24px;
 	line-height: 32px;
-	color: #ffffff;
+	color: #fff;
 }
