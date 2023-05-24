@@ -8,7 +8,9 @@
 		"format": "prettier --write .",
 		"formatCheck": "prettier --check .",
 		"lint:js": "eslint **/*.js",
-		"lint:css": "stylelint **/*.css"
+		"lint:css": "stylelint **/*.css",
+		"prepare": "husky install",
+		"lint": "npm run lint:js && npm run lint:css"
 	},
 	"repository": {
 		"type": "git",
@@ -24,6 +26,7 @@
 		"eslint": "^8.41.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-prettier": "^4.2.1",
+		"husky": "^8.0.3",
 		"prettier": "^2.8.8",
 		"stylelint": "^15.6.2",
 		"stylelint-config-standard": "^33.0.0",
