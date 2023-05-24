@@ -92,8 +92,12 @@ h6 {
 	src: url('../fonts/stratosskyeng-regular.otf');
 }
 
+body {
+	background: #004980;
+}
+
 .content {
-	height: 100vh;
+	min-height: 100vh;
 	background: #004980;
 	display: flex;
 	justify-content: center;
@@ -153,4 +157,90 @@ h6 {
 	font-size: 24px;
 	line-height: 32px;
 	color: #fff;
+}
+
+.game {
+	max-width: 1024px;
+	margin: 0 auto;
+	min-height: 100vh;
+	background: #004980;
+	padding: 22px 22px 49px;
+}
+
+.game__menu {
+	margin-bottom: 46px;
+}
+
+.game__game-place {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+.menu {
+	height: 90px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.menu__timer {
+	height: 91px;
+	width: 155px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.menu__timer-words {
+	font-style: normal;
+	font-size: 16px;
+	line-height: 32px;
+	color: #fff;
+	display: flex;
+	gap: 57px;
+	padding-right: 5px;
+}
+
+.menu__timer-numbers {
+	font-style: normal;
+	font-size: 64px;
+	line-height: 45px;
+	color: #fff;
+}
+
+.menu__button {
+	align-self: center;
+	width: 246px;
+	height: 50px;
+	background: #7ac100;
+	border-radius: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 24px;
+	line-height: 32px;
+	color: #fff;
+	margin-top: 30px;
+}
+
+.card {
+	width: 95px;
+	height: 133px;
+}
+
+.card__wrapper {
+	background: #fff;
+	border-radius: 4px;
+}
+
+.card__back-side {
+	width: 100px;
+	height: 100%;
+	padding: 6px;
+	background: #e4fbff;
+	border-radius: 4px;
+}
+
+.card__front-side img {
+	border-radius: 4px;
 }
