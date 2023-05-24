@@ -1,0 +1,24 @@
+{
+	"name": "cardgame",
+	"version": "1.0.0",
+	"description": "Application for the game \"guess a pair of cards\"",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"format": "prettier --write .",
+		"formatCheck": "prettier --check ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/NikMrVolk/CardGame.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/NikMrVolk/CardGame/issues"
+	},
+	"homepage": "https://github.com/NikMrVolk/CardGame#readme",
+	"devDependencies": {
+		"prettier": "^2.8.8"
+	}
+}
