@@ -1,0 +1,35 @@
+{
+	"name": "cardgame",
+	"version": "1.0.0",
+	"description": "Application for the game \"guess a pair of cards\"",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"format": "prettier --write .",
+		"formatCheck": "prettier --check .",
+		"lint:js": "eslint **/*.js",
+		"lint:css": "stylelint **/*.css",
+		"prepare": "husky install",
+		"lint": "npm run lint:js && npm run lint:css"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/NikMrVolk/CardGame.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/NikMrVolk/CardGame/issues"
+	},
+	"homepage": "https://github.com/NikMrVolk/CardGame#readme",
+	"devDependencies": {
+		"eslint": "^8.41.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"husky": "^8.0.3",
+		"prettier": "^2.8.8",
+		"stylelint": "^15.6.2",
+		"stylelint-config-standard": "^33.0.0",
+		"stylelint-prettier": "^3.0.0"
+	}
+}
