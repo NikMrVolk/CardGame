@@ -10,7 +10,8 @@
 		"lint:js": "eslint **/*.js",
 		"lint:css": "stylelint **/*.css",
 		"prepare": "husky install",
-		"lint": "npm run lint:js && npm run lint:css"
+		"lint": "npm run lint:js && npm run lint:css",
+		"build": "webpack"
 	},
 	"repository": {
 		"type": "git",
@@ -30,6 +31,8 @@
 		"prettier": "^2.8.8",
 		"stylelint": "^15.6.2",
 		"stylelint-config-standard": "^33.0.0",
-		"stylelint-prettier": "^3.0.0"
+		"stylelint-prettier": "^3.0.0",
+		"webpack": "^5.85.0",
+		"webpack-cli": "^5.1.1"
 	}
 }
