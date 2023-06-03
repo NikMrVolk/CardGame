@@ -1,7 +1,9 @@
-const app = document.querySelector('.content')
+import './css/style.css';
+
+const app = document.querySelector('.content');
 
 // let gameTime
-let difficultyLevel
+let difficultyLevel;
 // let gameStatus
 // let generatedCards
 // let choosedCards
@@ -9,28 +11,28 @@ let difficultyLevel
 const startGame = () => {
 	const buttonStartGame = document.querySelector(
 		'.choose-difficulty__start-button'
-	)
+	);
 	buttonStartGame.addEventListener('click', () => {
 		const inputsDifficultyLevel = document.querySelectorAll(
 			'.choose-difficulty__real-radio'
-		)
+		);
 		for (const inputDifficultyLevel of inputsDifficultyLevel) {
 			if (inputDifficultyLevel.checked) {
-				difficultyLevel = inputDifficultyLevel.value
+				difficultyLevel = inputDifficultyLevel.value;
 			}
 		}
 		if (difficultyLevel) {
-			renderApp(getPlayPlace)
+			renderApp(getPlayPlace);
 			setTimeout(
 				() =>
 					alert(
 						`Вы перешли на поле для игры, выыбрав уровень сложности ${difficultyLevel}`
 					),
 				100
-			)
+			);
 		}
-	})
-}
+	});
+};
 
 const getdifficultyLevel = () => {
 	return `<form class="choose-difficulty">
@@ -50,18 +52,18 @@ const getdifficultyLevel = () => {
 		</label>
 	</div>
 	<div class="choose-difficulty__start-button">Старт</div>
-</form>`
-}
+</form>`;
+};
 
 const getPlayPlace = () => {
-	return ``
-}
+	return ``;
+};
 
 const renderApp = (getElementHTML) => {
-	app.innerHTML = getElementHTML()
+	app.innerHTML = getElementHTML();
 	if (document.querySelector('.choose-difficulty__start-button')) {
-		startGame()
+		startGame();
 	}
-}
+};
 
-renderApp(getdifficultyLevel)
+renderApp(getdifficultyLevel);
