@@ -1,5 +1,8 @@
 import './css/style.css';
 
+import { getdifficultyLevel } from "./js/gets.js";
+import { getPlayPlace } from './js/gets.js';
+
 const app = document.querySelector('.content');
 
 // let gameTime
@@ -7,6 +10,11 @@ let difficultyLevel;
 // let gameStatus
 // let generatedCards
 // let choosedCards
+
+// Todo: Разделить разметку игрового меню и поля для игры в gets
+// Todo: Создать массив данных на основании цвета и масти карт
+// Todo: Воссоздать рендер поля игры с цветами карт на основании массива
+// Todo: Реализовать дальнейший пользовательский сценарий
 
 const startGame = () => {
 	const buttonStartGame = document.querySelector(
@@ -26,37 +34,12 @@ const startGame = () => {
 			setTimeout(
 				() =>
 					alert(
-						`Вы перешли на поле для игры, выыбрав уровень сложности ${difficultyLevel}`
+						`Вы перешли на поле для игры, выбрав уровень сложности ${difficultyLevel}`
 					),
 				100
 			);
 		}
 	});
-};
-
-const getdifficultyLevel = () => {
-	return `<form class="choose-difficulty">
-	<div class="choose-difficulty__title">Выбери сложность</div>
-	<div class="choose-difficulty__difficulty-row">
-		<label>
-			<input class="choose-difficulty__real-radio" value="1" name="level" type="radio">
-			<span class="choose-difficulty__custom-radio">1</span>
-		</label>
-		<label>
-			<input class="choose-difficulty__real-radio" value="2" name="level" type="radio">
-			<span class="choose-difficulty__custom-radio">2</span>
-		</label>
-		<label>
-			<input class="choose-difficulty__real-radio" value="3" name="level" type="radio">
-			<span class="choose-difficulty__custom-radio">3</span>
-		</label>
-	</div>
-	<div class="choose-difficulty__start-button">Старт</div>
-</form>`;
-};
-
-const getPlayPlace = () => {
-	return ``;
 };
 
 const renderApp = (getElementHTML) => {
