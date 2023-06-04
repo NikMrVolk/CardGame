@@ -1,11 +1,11 @@
 import './css/style.css';
-import { getdifficultyLevel, getPlayPlace } from './js/gets.js';
-import { renderApp, renderCardsBack, renderCardsFront } from './js/render.js';
+import { getdifficultyLevel } from './js/gets.js';
+import { renderApp } from './js/render.js';
 
 export const app = document.querySelector('.content');
 
 // let gameTime
-let difficultyLevel;
+export let difficultyLevel = {};
 // let gameStatus
 // let generatedCards
 // let choosedCards
@@ -21,33 +21,5 @@ let difficultyLevel;
 // Todo: Проработать процесс сравнения карт:
 // Todo: При выборе карты показывать её
 // Todo: При выборе другой карты показать вторую и сравнить их
-
-export const startGame = () => {
-	const buttonStartGame = document.querySelector(
-		'.choose-difficulty__start-button'
-	);
-	buttonStartGame.addEventListener('click', () => {
-		const inputsDifficultyLevel = document.querySelectorAll(
-			'.choose-difficulty__real-radio'
-		);
-		for (const inputDifficultyLevel of inputsDifficultyLevel) {
-			if (inputDifficultyLevel.checked) {
-				difficultyLevel = inputDifficultyLevel.value;
-			}
-		}
-		if (difficultyLevel) {
-			renderApp(getPlayPlace);
-			renderCardsBack();
-			renderCardsFront();
-			setTimeout(
-				() =>
-					alert(
-						`Вы перешли на поле для игры, выбрав уровень сложности ${difficultyLevel}`
-					),
-				100
-			);
-		}
-	});
-};
 
 renderApp(getdifficultyLevel);

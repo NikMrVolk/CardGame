@@ -1,12 +1,12 @@
 import { app } from '../index.js';
 import { cards } from './cardsData.js';
-import { startGame } from '../index.js';
+import { chooseDifficulty } from './chooseDificulty.js';
 import { getCardsBack, getCardsFront } from './gets.js';
 
 export const renderApp = (getElementHTML) => {
 	app.innerHTML = getElementHTML();
 	if (document.querySelector('.choose-difficulty__start-button')) {
-		startGame();
+		chooseDifficulty();
 	}
 };
 
