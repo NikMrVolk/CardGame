@@ -1,9 +1,8 @@
 import './css/style.css';
+import { getdifficultyLevel, getPlayPlace } from './js/gets.js';
+import { renderApp, renderCardsBack, renderCardsFront } from './js/render.js';
 
-import { getdifficultyLevel } from "./js/gets.js";
-import { getPlayPlace } from './js/gets.js';
-
-const app = document.querySelector('.content');
+export const app = document.querySelector('.content');
 
 // let gameTime
 let difficultyLevel;
@@ -11,12 +10,19 @@ let difficultyLevel;
 // let generatedCards
 // let choosedCards
 
-// Todo: Разделить разметку игрового меню и поля для игры в gets
-// Todo: Создать массив данных на основании цвета и масти карт
-// Todo: Воссоздать рендер поля игры с цветами карт на основании массива
-// Todo: Реализовать дальнейший пользовательский сценарий
+// Todo: Разделить разметку игрового меню и поля для игры в gets (+)
+// Todo: Создать массив данных на основании цвета и масти карт (+)
+// Todo: Воссоздать рендер поля игры с цветами карт на основании массива (+)
+// Todo: Сделать один массив с картами
+// Todo: Создать модуль под начало игры при выборе уровня сложности
+// Todo: Реализовать дальнейший пользовательский сценарий:
+// Todo: Воссоздать генерацию карт исходя из выбранного уровня сложности
+// Todo: Показать пользователю карты на 5 секунд, после чего показать обложки
+// Todo: Проработать процесс сравнения карт:
+// Todo: При выборе карты показывать её
+// Todo: При выборе другой карты показать вторую и сравнить их
 
-const startGame = () => {
+export const startGame = () => {
 	const buttonStartGame = document.querySelector(
 		'.choose-difficulty__start-button'
 	);
@@ -31,6 +37,8 @@ const startGame = () => {
 		}
 		if (difficultyLevel) {
 			renderApp(getPlayPlace);
+			renderCardsBack();
+			renderCardsFront();
 			setTimeout(
 				() =>
 					alert(
@@ -40,13 +48,6 @@ const startGame = () => {
 			);
 		}
 	});
-};
-
-const renderApp = (getElementHTML) => {
-	app.innerHTML = getElementHTML();
-	if (document.querySelector('.choose-difficulty__start-button')) {
-		startGame();
-	}
 };
 
 renderApp(getdifficultyLevel);
