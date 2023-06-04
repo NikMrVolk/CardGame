@@ -1,8 +1,9 @@
-import { difficultyLevel } from "../index.js";
-import { renderApp, renderCardsBack, renderCardsFront } from "./render";
-import { getPlayPlace } from "./gets.js";
+import { difficultyLevel, gameStatus } from '../index.js';
+import { renderApp, renderCardsBack, renderCardsFront } from './render';
+import { getPlayPlace } from './gets.js';
 
 export const chooseDifficulty = () => {
+	gameStatus.value = 'choose difficulty';
 	const buttonChooseDifficulty = document.querySelector(
 		'.choose-difficulty__start-button'
 	);

@@ -142,7 +142,7 @@ body {
 }
 
 .game {
-	max-width: 1024px;
+	width: 1024px;
 	margin: 0 auto;
 	min-height: 100vh;
 	background: #004980;
@@ -216,13 +216,13 @@ body {
 		width: 100px;
 		height: 100%;
 		padding: 6px;
-		background: #E4FBFF;
+		background: #e4fbff;
 		border-radius: 4px;
 	}
 
 	&__front-side {
 		& img {
 			border-radius: 4px;
-		} 
+		}
 	}
 }
