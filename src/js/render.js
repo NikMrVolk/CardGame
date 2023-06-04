@@ -1,5 +1,5 @@
 import { app } from '../index.js';
-import { cardsBack, cardsFront } from './cardsData.js';
+import { cards } from './cardsData.js';
 import { startGame } from '../index.js';
 import { getCardsBack, getCardsFront } from './gets.js';
 
@@ -12,12 +12,12 @@ export const renderApp = (getElementHTML) => {
 
 export const renderCardsBack = () => {
 	const gamePlace = document.getElementById('game-place');
-	const cardsBackHTML = cardsBack.map((card) => getCardsBack(card)).join('');
+	const cardsBackHTML = cards.map((card) => getCardsBack(card)).join('');
 	gamePlace.innerHTML = cardsBackHTML;
 };
 
 export const renderCardsFront = () => {
 	const gamePlace = document.getElementById('game-place');
-	const cardsFrontHTML = cardsFront.map((card) => getCardsFront(card)).join('');
+	const cardsFrontHTML = cards.map((card) => getCardsFront(card)).join('');
 	gamePlace.innerHTML = cardsFrontHTML;
 };

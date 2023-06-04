@@ -47,7 +47,7 @@ export const getCardsBack = (card) => {
 	<div class="card">
 		<div class="card__wrapper">
 			<div class="card__back-side">
-				<img src="${card.src}" alt="back side card" />
+				<img src="${card.srcBack}" alt="back side card" />
 			</div>
 		</div>
 	</div>`
@@ -57,7 +57,7 @@ export const getCardsFront = (card) => {
 	return `
 	<div class="card">
 			<div class="card__front-side">
-				<img src="${card.src}" alt="${card.value} of ${card.suit}" />
+				<img src="${card.srcFront}" alt="${card.value} of ${card.suit}" />
 			</div>
 	</div>`
 }
