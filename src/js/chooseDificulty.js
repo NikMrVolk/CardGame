@@ -1,7 +1,12 @@
 import { difficultyLevel, gameStatus } from '../index.js';
 import { renderApp, renderCardsFront } from './render';
 import { getPlayPlace } from './gets.js';
-import { preparationForGame, changeCardsSize } from './game.js';
+import {
+	preparationForGame,
+	changeCardsSize,
+	hidingCards,
+	showingCard,
+} from './game.js';
 
 export const chooseDifficulty = () => {
 	gameStatus.value = 'choose difficulty';
@@ -21,13 +26,11 @@ export const chooseDifficulty = () => {
 			renderApp(getPlayPlace);
 			renderCardsFront(preparationForGame());
 			changeCardsSize();
-			setTimeout(
-				() =>
-					alert(
-						`Вы перешли на поле для игры, выбрав уровень сложности ${difficultyLevel.value}`
-					),
-				100
-			);
+
+			setTimeout(() => {
+				hidingCards();
+				showingCard();
+			}, 1000);
 		}
 	});
 };

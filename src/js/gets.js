@@ -44,7 +44,7 @@ export const getPlayPlace = () => {
 
 export const getCardsBack = (card) => {
 	return `
-	<div class="card">
+	<div class="card" data-index='${card.id}' data-src='${card.srcFront}'>
 		<div class="card__wrapper">
 			<div class="card__back-side">
 				<img class="card__img" src="${card.srcBack}" alt="back side card" />
