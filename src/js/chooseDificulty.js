@@ -1,6 +1,7 @@
 import { difficultyLevel, gameStatus } from '../index.js';
-import { renderApp, renderCardsBack, renderCardsFront } from './render';
+import { renderApp, renderCardsFront } from './render';
 import { getPlayPlace } from './gets.js';
+import { preparationForGame, changeCardsSize } from './game.js';
 
 export const chooseDifficulty = () => {
 	gameStatus.value = 'choose difficulty';
@@ -18,8 +19,8 @@ export const chooseDifficulty = () => {
 		}
 		if (difficultyLevel) {
 			renderApp(getPlayPlace);
-			renderCardsBack();
-			renderCardsFront();
+			renderCardsFront(preparationForGame());
+			changeCardsSize();
 			setTimeout(
 				() =>
 					alert(

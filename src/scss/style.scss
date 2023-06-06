@@ -154,6 +154,8 @@ body {
 	&__game-place {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
+		margin: 0 auto;
 		gap: 15px;
 	}
 }
@@ -204,9 +206,6 @@ body {
 }
 
 .card {
-	width: 95px;
-	height: 133px;
-
 	&__wrapper {
 		background: #ffffff;
 		border-radius: 4px;
@@ -220,9 +219,8 @@ body {
 		border-radius: 4px;
 	}
 
-	&__front-side {
-		& img {
-			border-radius: 4px;
-		}
+	&__img {
+		border-radius: 4px;
+		width: 95px;
 	}
 }

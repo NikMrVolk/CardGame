@@ -3,7 +3,6 @@ import { cards } from './cardsData.js';
 import { chooseDifficulty } from './chooseDificulty.js';
 import { getCardsBack, getCardsFront } from './gets.js';
 
-import { preparationForGame } from './game.js';
 
 export const renderApp = (getElementHTML) => {
 	app.innerHTML = getElementHTML();
@@ -18,8 +17,8 @@ export const renderCardsBack = () => {
 	gamePlace.innerHTML = cardsBackHTML;
 };
 
-export const renderCardsFront = () => {
+export const renderCardsFront = (cards) => {
 	const gamePlace = document.getElementById('game-place');
-	const cardsFrontHTML = preparationForGame().map((card) => getCardsFront(card)).join('');
+	const cardsFrontHTML = cards.map((card) => getCardsFront(card)).join('');
 	gamePlace.innerHTML = cardsFrontHTML;
 };

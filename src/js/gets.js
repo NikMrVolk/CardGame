@@ -32,7 +32,7 @@ export const getPlayMenu = () => {
 		</div>
 		<div class="menu__button">Начать заново</div>
 	</div>`;
-}
+};
 
 export const getPlayPlace = () => {
 	return `
@@ -47,17 +47,17 @@ export const getCardsBack = (card) => {
 	<div class="card">
 		<div class="card__wrapper">
 			<div class="card__back-side">
-				<img src="${card.srcBack}" alt="back side card" />
+				<img class="card__img" src="${card.srcBack}" alt="back side card" />
 			</div>
 		</div>
-	</div>`
-}
+	</div>`;
+};
 
 export const getCardsFront = (card) => {
 	return `
 	<div class="card">
 			<div class="card__front-side">
-				<img src="${card.srcFront}" alt="${card.value} of ${card.suit}" />
+				<img class="card__img" src="${card.srcFront}" alt="${card.value} of ${card.suit}" />
 			</div>
-	</div>`
-}
+	</div>`;
+};

@@ -8,3 +8,4 @@ export const shuffle = (arr) => {
 export const cardDoubling = (arr) => {
 	return arr.map((el) => [el].concat([el])).flat();
 };
+
