@@ -1,6 +1,6 @@
-import { difficultyLevel } from '../index.js';
+import { choosedCards, difficultyLevel, generatedCards } from '../index.js';
 import { cards } from './cardsData.js';
-import { shuffle, cardDoubling } from './helpers.js';
+import { shuffle, cardDoubling, cardsСomparison } from './helpers.js';
 import { renderCardsBack } from './render.js';
 
 export const preparationForGame = () => {
@@ -26,6 +26,7 @@ export const preparationForGame = () => {
 		default:
 			throw new Error('Choosed another difficulty level');
 	}
+	generatedCards.body = cardsForGame;
 	return cardsForGame;
 };
 
@@ -43,7 +44,8 @@ export const changeCardsSize = () => {
 };
 
 export const hidingCards = () => {
-	renderCardsBack(preparationForGame());
+	renderCardsBack(generatedCards.body);
+	console.log(generatedCards.body);
 	const gamePlace = document.getElementById('game-place');
 	const cardsElements = document.querySelectorAll('.card__wrapper');
 	for (const cardElement of cardsElements) {
@@ -58,16 +60,69 @@ export const hidingCards = () => {
 	}
 };
 
-export const showingCard = () => {
+export const showingAndCompareCards = () => {
 	const cards = document.querySelectorAll('.card');
 	for (const card of cards) {
 		card.addEventListener('click', () => {
-			console.log(card.dataset.src);
-			console.log(card);
 			card.innerHTML = `
 				<div class="card__front-side">
 					<img class="card__img" src="${card.dataset.src}" alt="" style="width:150px; height: 210px" />
 				</div>`;
+			choosedCards.push(card.dataset.src);
+			switch (choosedCards.length) {
+				case 2:
+					cardsСomparison(choosedCards, 0, 1);
+					break;
+				case 4:
+					cardsСomparison(choosedCards, 2, 3);
+					break;
+				case 6:
+					cardsСomparison(choosedCards, 4, 5);
+					break;
+				case 8:
+					if (
+						generatedCards.body.length === 8 &&
+						choosedCards[6] === choosedCards[7]
+					) {
+						setTimeout(() => {
+							alert('You are the winner!!!');
+						}, 400);
+					} else {
+						cardsСomparison(choosedCards, 6, 7);
+					}
+					break;
+				case 10:
+					cardsСomparison(choosedCards, 8, 9);
+					break;
+				case 12:
+					if (
+						generatedCards.body.length === 12 &&
+						choosedCards[10] === choosedCards[11]
+					) {
+						setTimeout(() => {
+							alert('You are the winner!!!');
+						}, 400);
+					} else {
+						cardsСomparison(choosedCards, 10, 11);
+					}
+					break;
+				case 14:
+					cardsСomparison(choosedCards, 12, 13);
+					break;
+				case 16:
+					cardsСomparison(choosedCards, 14, 15);
+					break;
+				case 18:
+					if (
+						choosedCards.length === 18 &&
+						choosedCards[16] === choosedCards[17]
+					) {
+						setTimeout(() => {
+							alert('You are the winner!!!');
+						}, 400);
+					}
+					break;
+			}
 		});
 	}
 };

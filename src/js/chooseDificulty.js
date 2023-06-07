@@ -5,7 +5,7 @@ import {
 	preparationForGame,
 	changeCardsSize,
 	hidingCards,
-	showingCard,
+	showingAndCompareCards,
 } from './game.js';
 
 export const chooseDifficulty = () => {
@@ -29,8 +29,8 @@ export const chooseDifficulty = () => {
 
 			setTimeout(() => {
 				hidingCards();
-				showingCard();
-			}, 1000);
+				showingAndCompareCards();
+			}, 5000);
 		}
 	});
 };
