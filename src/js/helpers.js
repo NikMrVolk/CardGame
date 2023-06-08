@@ -9,7 +9,7 @@ export const cardDoubling = (arr) => {
 	return arr.map((el) => [el].concat([el])).flat();
 };
 
-export const cardsСomparison = (choosedCards, firstElement, secondElement) => {
+export const cardsComparison = (choosedCards, firstElement, secondElement) => {
 	choosedCards[firstElement] === choosedCards[secondElement]
 		? setTimeout(() => {
 				alert('Good');

@@ -1,6 +1,6 @@
 import { choosedCards, difficultyLevel, generatedCards } from '../index.js';
 import { cards } from './cardsData.js';
-import { shuffle, cardDoubling, cardsСomparison } from './helpers.js';
+import { shuffle, cardDoubling, cardsComparison } from './helpers.js';
 import { renderCardsBack } from './render.js';
 
 export const preparationForGame = () => {
@@ -69,59 +69,19 @@ export const showingAndCompareCards = () => {
 					<img class="card__img" src="${card.dataset.src}" alt="" style="width:150px; height: 210px" />
 				</div>`;
 			choosedCards.push(card.dataset.src);
-			switch (choosedCards.length) {
-				case 2:
-					cardsСomparison(choosedCards, 0, 1);
-					break;
-				case 4:
-					cardsСomparison(choosedCards, 2, 3);
-					break;
-				case 6:
-					cardsСomparison(choosedCards, 4, 5);
-					break;
-				case 8:
-					if (
-						generatedCards.body.length === 8 &&
-						choosedCards[6] === choosedCards[7]
-					) {
-						setTimeout(() => {
-							alert('You are the winner!!!');
-						}, 400);
-					} else {
-						cardsСomparison(choosedCards, 6, 7);
-					}
-					break;
-				case 10:
-					cardsСomparison(choosedCards, 8, 9);
-					break;
-				case 12:
-					if (
-						generatedCards.body.length === 12 &&
-						choosedCards[10] === choosedCards[11]
-					) {
-						setTimeout(() => {
-							alert('You are the winner!!!');
-						}, 400);
-					} else {
-						cardsСomparison(choosedCards, 10, 11);
-					}
-					break;
-				case 14:
-					cardsСomparison(choosedCards, 12, 13);
-					break;
-				case 16:
-					cardsСomparison(choosedCards, 14, 15);
-					break;
-				case 18:
-					if (
-						choosedCards.length === 18 &&
-						choosedCards[16] === choosedCards[17]
-					) {
-						setTimeout(() => {
-							alert('You are the winner!!!');
-						}, 400);
-					}
-					break;
+			const index = choosedCards.length - 1;
+			console.log(index);
+			if (index % 2 !== 0 && choosedCards.length !== generatedCards.body.length) {
+				cardsComparison(choosedCards, index - 1, index);
+			}
+
+			if (
+				choosedCards.length === generatedCards.body.length &&
+				choosedCards[index] === choosedCards[index - 1]
+			) {
+				setTimeout(() => {
+					alert('You are the winner!!!');
+				}, 400);
 			}
 		});
 	}
