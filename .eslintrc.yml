@@ -2,10 +2,16 @@
   'env': { 'browser': true, 'es6': true, 'node': true },
   'extends': ['eslint:recommended', 'prettier'],
   'plugins': ['prettier'],
-  'parserOptions': { 'ecmaVersion': 2020 },
+  'parser': '@babel/eslint-parser',
+  'parserOptions':
+    {
+      'ecmaVersion': 2020,
+      'sourceType': 'module',
+      'requireConfigFile': false,
+      'allowImportExportEverywhere': true,
+    },
   'rules':
     {
-      'prettier/prettier': 'error',
       'camelcase': ['error'],
       'eqeqeq': ['error', 'always'],
     },

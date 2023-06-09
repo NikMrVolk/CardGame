@@ -10,7 +10,9 @@
 		"lint:js": "eslint **/*.js",
 		"lint:css": "stylelint **/*.css",
 		"prepare": "husky install",
-		"lint": "npm run lint:js && npm run lint:css"
+		"lint": "npm run lint:js && npm run lint:css",
+		"build": "NODE_ENV=production webpack",
+		"start": "webpack-dev-server --open"
 	},
 	"repository": {
 		"type": "git",
@@ -23,13 +25,25 @@
 	},
 	"homepage": "https://github.com/NikMrVolk/CardGame#readme",
 	"devDependencies": {
-		"eslint": "^8.41.0",
+		"@babel/core": "^7.22.1",
+		"@babel/eslint-parser": "^7.21.8",
+		"@babel/preset-env": "^7.22.4",
+		"copy-webpack-plugin": "^11.0.0",
+		"css-loader": "^6.8.1",
+		"css-minimizer-webpack-plugin": "^5.0.0",
+		"eslint": "^8.42.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-prettier": "^4.2.1",
+		"html-webpack-plugin": "^5.5.1",
 		"husky": "^8.0.3",
+		"mini-css-extract-plugin": "^2.7.6",
 		"prettier": "^2.8.8",
+		"style-loader": "^3.3.3",
 		"stylelint": "^15.6.2",
 		"stylelint-config-standard": "^33.0.0",
-		"stylelint-prettier": "^3.0.0"
+		"stylelint-prettier": "^3.0.0",
+		"webpack": "^5.85.0",
+		"webpack-cli": "^5.1.1",
+		"webpack-dev-server": "^4.15.0"
 	}
 }

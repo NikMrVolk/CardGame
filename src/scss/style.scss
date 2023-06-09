@@ -142,7 +142,7 @@ body {
 }
 
 .game {
-	max-width: 1024px;
+	width: 1024px;
 	margin: 0 auto;
 	min-height: 100vh;
 	background: #004980;
@@ -154,6 +154,8 @@ body {
 	&__game-place {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
+		margin: 0 auto;
 		gap: 15px;
 	}
 }
@@ -204,25 +206,21 @@ body {
 }
 
 .card {
-	width: 95px;
-	height: 133px;
-
 	&__wrapper {
 		background: #ffffff;
 		border-radius: 4px;
 	}
 
 	&__back-side {
-		width: 100px;
 		height: 100%;
 		padding: 6px;
-		background: #E4FBFF;
+		background: #e4fbff;
 		border-radius: 4px;
 	}
 
-	&__front-side {
-		& img {
-			border-radius: 4px;
-		} 
+	&__img {
+		border-radius: 4px;
+		height: 100%;
+		width: 100%;
 	}
 }
