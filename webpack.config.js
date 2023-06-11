@@ -16,10 +16,18 @@ module.exports = {
 	},
 	module: {
 		rules: [
+			{
+				test: /\.ts$/,
+				use: 'ts-loader',
+				exclude: /node_modules/,
+			},
 			{ test: /\.css$/i, use: [MiniCssExtractPlugin.loader, 'css-loader'] },
 			{ test: /\.(png|svg|jpg|jped|gif)$/i, type: 'asset/resource' },
 			{ test: /\.(woff|woff2|eot|ttf|otf)$/i, type: 'asset/resource' },
 		],
+	},
+	resolve: {
+		extensions: ['.ts', '.js'],
 	},
 	plugins: [
 		new CopyPlugin({

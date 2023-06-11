@@ -16,7 +16,7 @@ export const renderCardsBack = (cards) => {
 	gamePlace.innerHTML = cardsBackHTML;
 };
 
-export const renderCardsFront = (cards) => {
+export const renderCardsFront = (cards: any) => {
 	const gamePlace = document.getElementById('game-place');
 	const cardsFrontHTML = cards.map((card) => getCardsFront(card)).join('');
 	gamePlace.innerHTML = cardsFrontHTML;

@@ -1,5 +1,5 @@
 import { difficultyLevel, gameStatus } from '../index.js';
-import { renderApp, renderCardsFront } from './render';
+import { renderApp, renderCardsFront } from './render.js';
 import { getPlayPlace } from './gets.js';
 import {
 	preparationForGame,
