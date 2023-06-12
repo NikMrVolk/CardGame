@@ -1,4 +1,4 @@
-export const cards = [
+export const cards: Card[] = [
 	{
 		suit: 'diamond',
 		value: 'ace',

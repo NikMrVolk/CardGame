@@ -4,8 +4,8 @@ import { shuffle, cardDoubling, cardsComparison } from './helpers.js';
 import { renderCardsBack } from './render.js';
 
 export const preparationForGame = () => {
-	const shuffledСards = shuffle(cards);
-	let cardsForGame;
+	const shuffledСards: any = shuffle(cards);
+	let cardsForGame: any;
 
 	switch (difficultyLevel.value) {
 		case '1':
@@ -31,8 +31,8 @@ export const preparationForGame = () => {
 };
 
 export const changeCardsSize = () => {
-	const gamePlace = document.getElementById('game-place');
-	const cardsElements = document.querySelectorAll('.card__img');
+	const gamePlace: any = document.getElementById('game-place');
+	const cardsElements: any = document.querySelectorAll('.card__img');
 	for (const cardElement of cardsElements) {
 		if (difficultyLevel.value === '1') {
 			gamePlace.style.width = '800px';
@@ -46,8 +46,8 @@ export const changeCardsSize = () => {
 export const hidingCards = () => {
 	renderCardsBack(generatedCards.body);
 	console.log(generatedCards.body);
-	const gamePlace = document.getElementById('game-place');
-	const cardsElements = document.querySelectorAll('.card__wrapper');
+	const gamePlace: any = document.getElementById('game-place');
+	const cardsElements: any = document.querySelectorAll('.card__wrapper');
 	for (const cardElement of cardsElements) {
 		if (difficultyLevel.value === '1') {
 			gamePlace.style.width = '800px';
@@ -61,7 +61,7 @@ export const hidingCards = () => {
 };
 
 export const showingAndCompareCards = () => {
-	const cards = document.querySelectorAll('.card');
+	const cards: any = document.querySelectorAll('.card');
 	for (const card of cards) {
 		card.addEventListener('click', () => {
 			card.innerHTML = `
@@ -70,7 +70,6 @@ export const showingAndCompareCards = () => {
 				</div>`;
 			choosedCards.push(card.dataset.src);
 			const index = choosedCards.length - 1;
-			console.log(index);
 			if (index % 2 !== 0 && choosedCards.length !== generatedCards.body.length) {
 				cardsComparison(choosedCards, index - 1, index);
 			}

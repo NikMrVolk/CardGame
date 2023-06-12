@@ -42,7 +42,7 @@ export const getPlayPlace = () => {
 	</div>`;
 };
 
-export const getCardsBack = (card) => {
+export const getCardsBack = (card: Card) => {
 	return `
 	<div class="card" data-index='${card.id}' data-src='${card.srcFront}'>
 		<div class="card__wrapper">
@@ -53,7 +53,7 @@ export const getCardsBack = (card) => {
 	</div>`;
 };
 
-export const getCardsFront = (card) => {
+export const getCardsFront = (card: Card) => {
 	return `
 	<div class="card">
 			<div class="card__front-side">
