@@ -1,15 +1,9 @@
 import { difficultyLevel, gameStatus } from '../index';
 import { renderApp, renderCardsFront } from './render';
-import { getPlayPlace } from './gets';
-import {
-	preparationForGame,
-	changeCardsSize,
-	hidingCards,
-	showingAndCompareCards,
-} from './game';
+import { game } from './game';
 
 export const chooseDifficulty = () => {
-	gameStatus.value = 'choose difficulty';
+	gameStatus.status = 'choose difficulty';
 	const buttonChooseDifficulty: any = document.querySelector(
 		'.choose-difficulty__start-button'
 	);
@@ -23,14 +17,7 @@ export const chooseDifficulty = () => {
 			}
 		}
 		if (difficultyLevel) {
-			renderApp(getPlayPlace);
-			renderCardsFront(preparationForGame());
-			changeCardsSize();
-
-			setTimeout(() => {
-				hidingCards();
-				showingAndCompareCards();
-			}, 5000);
+			game();
 		}
 	});
 };

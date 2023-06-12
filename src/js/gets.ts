@@ -61,3 +61,33 @@ export const getCardsFront = (card: Card) => {
 			</div>
 	</div>`;
 };
+
+export const getWinMenu = () => {
+	return `
+	<div class="endwrapper">
+		<div class="finalmenu">
+			<div class="finalmenu__image">
+				<img src="./img/finalMenu/win.png" alt="You win" />
+			</div>
+			<h3 class="finalmenu__title" id="game-status">Вы выиграли!</h3>
+			<div class="finalmenu__subtitle">Затраченное время:</div>
+			<div class="menu__timer-numbers finalmenu__timer-numbers" id='timer'>00.00</div>
+			<div class="menu__button finalmenu__button">Играть снова</div>
+		</div>
+	</div>`
+}
+
+export const getLossMenu = () => {
+	return `
+	<div class="endwrapper">
+		<div class="finalmenu">
+			<div class="finalmenu__image">
+				<img src="./img/finalMenu/loss.png" alt="You loss" />
+			</div>
+			<h3 class="finalmenu__title" id="game-status">Вы проиграли!</h3>
+			<div class="finalmenu__subtitle">Затраченное время:</div>
+			<div class="menu__timer-numbers finalmenu__timer-numbers" id='timer'>00.00</div>
+			<div class="menu__button finalmenu__button">Играть снова</div>
+		</div>
+	</div>`
+}

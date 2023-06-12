@@ -18,5 +18,10 @@ type GeneratedCards = {
 }
 
 type GameStatus = {
-	value?: string;
+	status: string;
+}
+
+type GameTime = {
+	minutes: number;
+	seconds: number;
 }

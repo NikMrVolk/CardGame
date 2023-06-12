@@ -4,9 +4,14 @@ import { renderApp } from './js/render';
 
 export const app: any = document.querySelector('.content');
 
-export let gameTime = {};
+export let gameTime: GameTime = {
+	seconds: 0,
+	minutes: 0,
+};
 export let difficultyLevel: DifficultyLevel = {};
-export let gameStatus: GameStatus = {};
+export let gameStatus: GameStatus = {
+	status: '',
+};
 export let generatedCards: GeneratedCards = {};
 export let choosedCards: string[] = [];
 

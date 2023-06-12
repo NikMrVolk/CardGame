@@ -227,11 +227,22 @@ body {
 }
 
 .endwrapper {
-  background: #ffffff;
+  position: absolute;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.endwrapper::before {
+  content: "";
+  background: #000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  z-index: 2;
 }
 
 .finalmenu {
@@ -243,6 +254,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 3;
 }
 .finalmenu__image {
   margin-bottom: 5px;

@@ -1,3 +1,7 @@
+import { gameStatus } from '../index';
+import { endGame } from './game';
+import { getLossMenu } from './gets';
+
 export const shuffle = (arr: Array<object>) => {
 	return arr
 		.map((i) => [Math.random(), i])
@@ -14,11 +18,8 @@ export const cardsComparison = (
 	firstElement: number,
 	secondElement: number
 ) => {
-	choosedCards[firstElement] === choosedCards[secondElement]
-		? setTimeout(() => {
-				alert('Good');
-		  }, 300)
-		: setTimeout(() => {
-				alert('you lose');
-		  }, 300);
+	if (choosedCards[firstElement] !== choosedCards[secondElement]) {
+		gameStatus.status = 'Вы проиграли!';
+		endGame(getLossMenu);
+	}
 };
