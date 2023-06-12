@@ -1,12 +1,12 @@
-import { difficultyLevel, gameStatus } from '../index.js';
-import { renderApp, renderCardsFront } from './render.js';
-import { getPlayPlace } from './gets.js';
+import { difficultyLevel, gameStatus } from '../index';
+import { renderApp, renderCardsFront } from './render';
+import { getPlayPlace } from './gets';
 import {
 	preparationForGame,
 	changeCardsSize,
 	hidingCards,
 	showingAndCompareCards,
-} from './game.js';
+} from './game';
 
 export const chooseDifficulty = () => {
 	gameStatus.value = 'choose difficulty';

@@ -1,7 +1,7 @@
-import { choosedCards, difficultyLevel, generatedCards } from '../index.js';
-import { cards } from './cardsData.js';
-import { shuffle, cardDoubling, cardsComparison } from './helpers.js';
-import { renderCardsBack } from './render.js';
+import { choosedCards, difficultyLevel, generatedCards } from '../index';
+import { cards } from './cardsData';
+import { shuffle, cardDoubling, cardsComparison } from './helpers';
+import { renderCardsBack } from './render';
 
 export const preparationForGame = () => {
 	const shuffledСards: any = shuffle(cards);

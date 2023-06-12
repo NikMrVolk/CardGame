@@ -1,6 +1,6 @@
-import { app } from '../index.js';
-import { chooseDifficulty } from './chooseDificulty.js';
-import { getCardsBack, getCardsFront } from './gets.js';
+import { app } from '../index';
+import { chooseDifficulty } from './chooseDificulty';
+import { getCardsBack, getCardsFront } from './gets';
 
 
 export const renderApp = (getElementHTML: Function) => {

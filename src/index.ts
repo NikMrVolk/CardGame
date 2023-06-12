@@ -1,6 +1,6 @@
 import './css/style.css';
-import { getdifficultyLevel } from './js/gets.js';
-import { renderApp } from './js/render.js';
+import { getdifficultyLevel } from './js/gets';
+import { renderApp } from './js/render';
 
 export const app: any = document.querySelector('.content');
 
