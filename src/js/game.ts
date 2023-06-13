@@ -38,39 +38,43 @@ export const preparationForGame = () => {
 };
 
 export const changeCardsSize = () => {
-	const gamePlace: any = document.getElementById('game-place');
-	const cardsElements: any = document.querySelectorAll('.card__img');
-	for (const cardElement of cardsElements) {
-		if (difficultyLevel.value === '1') {
-			gamePlace.style.width = '800px';
-			cardElement.style.width = '150px';
-		} else {
-			cardElement.style.width = '150px';
-		}
-	}
+	const gamePlace: HTMLElement | null = document.getElementById('game-place');
+	const cardsElements: NodeListOf<HTMLElement> = document.querySelectorAll('.card__img');
+	cardsElements.forEach((cardElement: HTMLElement) => {
+			if (difficultyLevel.value === '1' && gamePlace) {
+				gamePlace.style.width = '800px';
+				cardElement.style.width = '150px';
+			} else {
+				cardElement.style.width = '150px';
+			}
+	})
+
 };
 
 export const hidingCards = () => {
 	renderCardsBack(generatedCards.body);
-	const gamePlace: any = document.getElementById('game-place');
-	const cardsElements: any = document.querySelectorAll('.card__wrapper');
-	for (const cardElement of cardsElements) {
-		if (difficultyLevel.value === '1') {
+	const gamePlace: HTMLElement | null = document.getElementById('game-place');
+	const cardsElements: NodeListOf<HTMLElement>  = document.querySelectorAll('.card__wrapper');
+	console.log(cardsElements);
+	cardsElements.forEach((cardElement: HTMLElement | null) => {
+		if (difficultyLevel.value === '1' && gamePlace) {
 			gamePlace.style.width = '800px';
-			cardElement.style.width = '150px';
-			cardElement.style.height = '210px';
-		} else {
+		}
+		if (cardElement) {
 			cardElement.style.width = '150px';
 			cardElement.style.height = '210px';
 		}
-	}
+	});
 };
 
 export const timer = () => {
-	const myTimer: any = document.querySelector('.menu__timer-numbers');
-	let min = 0;
-	let sec = 0;
-	myTimer.innerHTML = `0${min}.0${sec}`;
+	const myTimer: HTMLElement | null = document.querySelector(
+		'.menu__timer-numbers'
+	);
+	if (myTimer) {
+		let min = 0;
+		let sec = 0;
+		myTimer.innerHTML = `0${min}.0${sec}`;
 		setInterval(() => {
 			if (sec !== 59) {
 				sec++;
@@ -88,11 +92,12 @@ export const timer = () => {
 				myTimer.innerHTML = `0${min}.0${sec}`;
 			}
 		}, 1000);
+	}
 };
 
 export const showingAndCompareCards = () => {
-	const cards: any = document.querySelectorAll('.card');
-	for (const card of cards) {
+	const cards: NodeListOf<HTMLElement> = document.querySelectorAll('.card');
+	cards.forEach((card: any ) => {
 		card.addEventListener('click', () => {
 			card.innerHTML = `
 				<div class="card__front-side">
@@ -110,32 +115,38 @@ export const showingAndCompareCards = () => {
 				choosedCards.length === generatedCards.body.length &&
 				choosedCards[index] === choosedCards[index - 1]
 			) {
-				gameStatus.status = 'Вы выиграли!'
-				endGame(getWinMenu)
+				gameStatus.status = 'Вы выиграли!';
+				endGame(getWinMenu);
 			}
 		});
-	}
+	})
 };
 
 export const endGame = (getMenu: Function) => {
 	clearInterval(5);
-	const endResult: any = document.querySelector('.content');
-	setTimeout(() => {
-		endResult.innerHTML += getWinMenu();
-		const endGameStatus: any = document.getElementById('game-status');
-		endGameStatus.innerHTML = gameStatus.status;
-		const endGameTime: any = document.getElementById('timer');
-		if (gameTime.seconds < 10) {
-			endGameTime.innerHTML = `0${gameTime.minutes}.0${gameTime.seconds}`;
-		} else {
-			endGameTime.innerHTML = `0${gameTime.minutes}.${gameTime.seconds}`;
-		}
-		const button: any = document.querySelector('.finalmenu__button');
-		button.addEventListener('click', () => {
-			renderApp(getdifficultyLevel);
-		});
-	}, 300);
-}
+	const endResult: HTMLElement | null = document.querySelector('.content');
+	if (endResult) {
+		setTimeout(() => {
+			endResult.innerHTML += getWinMenu();
+			const endGameStatus: HTMLElement | null =
+				document.getElementById('game-status');
+			if (endGameStatus) {
+				endGameStatus.innerHTML = gameStatus.status;
+			}
+			const endGameTime: HTMLElement | null = document.getElementById('timer');
+			if (gameTime.seconds < 10 && endGameTime) {
+				endGameTime.innerHTML = `0${gameTime.minutes}.0${gameTime.seconds}`;
+			} else if (endGameTime) {
+				endGameTime.innerHTML = `0${gameTime.minutes}.${gameTime.seconds}`;
+			}
+			const button: HTMLElement | null =
+				document.querySelector('.finalmenu__button');
+			button?.addEventListener('click', () => {
+				renderApp(getdifficultyLevel);
+			});
+		}, 300);
+	}
+};
 
 export const game = () => {
 	renderApp(getPlayPlace);

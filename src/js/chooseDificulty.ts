@@ -4,10 +4,10 @@ import { game } from './game';
 
 export const chooseDifficulty = () => {
 	gameStatus.status = 'choose difficulty';
-	const buttonChooseDifficulty: any = document.querySelector(
+	const buttonChooseDifficulty: HTMLElement | null = document.querySelector(
 		'.choose-difficulty__start-button'
 	);
-	buttonChooseDifficulty.addEventListener('click', () => {
+	buttonChooseDifficulty?.addEventListener('click', () => {
 		const inputsDifficultyLevel: any = document.querySelectorAll(
 			'.choose-difficulty__real-radio'
 		);
