@@ -11,8 +11,8 @@ import { shuffle, cardDoubling, cardsComparison } from './helpers';
 import { renderApp, renderCardsBack, renderCardsFront } from './render';
 
 export const preparationForGame = () => {
-	const shuffledСards: any = shuffle(cards);
-	let cardsForGame: any;
+	const shuffledСards: Card[] = shuffle(cards);
+	let cardsForGame: Card[];
 
 	switch (difficultyLevel.value) {
 		case '1':
@@ -39,22 +39,23 @@ export const preparationForGame = () => {
 
 export const changeCardsSize = () => {
 	const gamePlace: HTMLElement | null = document.getElementById('game-place');
-	const cardsElements: NodeListOf<HTMLElement> = document.querySelectorAll('.card__img');
+	const cardsElements: NodeListOf<HTMLElement> =
+		document.querySelectorAll('.card__img');
 	cardsElements.forEach((cardElement: HTMLElement) => {
-			if (difficultyLevel.value === '1' && gamePlace) {
-				gamePlace.style.width = '800px';
-				cardElement.style.width = '150px';
-			} else {
-				cardElement.style.width = '150px';
-			}
-	})
-
+		if (difficultyLevel.value === '1' && gamePlace) {
+			gamePlace.style.width = '800px';
+			cardElement.style.width = '150px';
+		} else {
+			cardElement.style.width = '150px';
+		}
+	});
 };
 
 export const hidingCards = () => {
 	renderCardsBack(generatedCards.body);
 	const gamePlace: HTMLElement | null = document.getElementById('game-place');
-	const cardsElements: NodeListOf<HTMLElement>  = document.querySelectorAll('.card__wrapper');
+	const cardsElements: NodeListOf<HTMLElement> =
+		document.querySelectorAll('.card__wrapper');
 	console.log(cardsElements);
 	cardsElements.forEach((cardElement: HTMLElement | null) => {
 		if (difficultyLevel.value === '1' && gamePlace) {
@@ -97,13 +98,16 @@ export const timer = () => {
 
 export const showingAndCompareCards = () => {
 	const cards: NodeListOf<HTMLElement> = document.querySelectorAll('.card');
-	cards.forEach((card: any ) => {
+	cards.forEach((card: HTMLElement) => {
 		card.addEventListener('click', () => {
 			card.innerHTML = `
 				<div class="card__front-side">
 					<img class="card__img" src="${card.dataset.src}" alt="" style="width:150px; height: 210px" />
 				</div>`;
-			choosedCards.push(card.dataset.src);
+			const cardSRC: string | undefined = card.dataset.src;
+			if (cardSRC) {
+				choosedCards.push(cardSRC);
+			}
 			const index = choosedCards.length - 1;
 			if (
 				index % 2 !== 0 &&
@@ -119,7 +123,7 @@ export const showingAndCompareCards = () => {
 				endGame(getWinMenu);
 			}
 		});
-	})
+	});
 };
 
 export const endGame = (getMenu: Function) => {

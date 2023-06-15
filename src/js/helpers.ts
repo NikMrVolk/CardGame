@@ -2,14 +2,14 @@ import { gameStatus } from '../index';
 import { endGame } from './game';
 import { getLossMenu } from './gets';
 
-export const shuffle = (arr: Array<object>) => {
+export const shuffle = (arr: Card[]): Card[] => {
 	return arr
-		.map((i) => [Math.random(), i])
+		.map<[number, Card]>((i) => [Math.random(), i])
 		.sort()
-		.map((i) => i[1]);
+		.map(([, i]) => i);
 };
 
-export const cardDoubling = (arr: Array<object>) => {
+export const cardDoubling = (arr: Card[]) => {
 	return arr.map((el) => [el].concat([el])).flat();
 };
 
