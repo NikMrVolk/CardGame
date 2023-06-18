@@ -4,7 +4,9 @@ import { getCardsBack, getCardsFront } from './gets';
 
 
 export const renderApp = (getElementHTML: Function) => {
-	app.innerHTML = getElementHTML();
+	if (app) {
+		app.innerHTML = getElementHTML();
+	}
 	if (document.querySelector('.choose-difficulty__start-button')) {
 		chooseDifficulty();
 	}

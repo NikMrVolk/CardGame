@@ -2,7 +2,7 @@ import './css/style.css';
 import { getdifficultyLevel } from './js/gets';
 import { renderApp } from './js/render';
 
-export const app: any = document.querySelector('.content');
+export const app: HTMLElement | null = document.querySelector('.content');
 
 export let gameTime: GameTime = {
 	seconds: 0,
