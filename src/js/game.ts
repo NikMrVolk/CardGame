@@ -156,7 +156,10 @@ export const game = () => {
 	renderApp(getPlayPlace);
 	renderCardsFront(preparationForGame());
 	changeCardsSize();
-
+	document.querySelector('.menu__button')?.addEventListener('click', () => {
+		console.log(1);
+		renderApp(getdifficultyLevel);
+	});
 	setTimeout(() => {
 		hidingCards();
 		timer();
