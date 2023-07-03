@@ -56,7 +56,6 @@ export const hidingCards = () => {
 	const gamePlace: HTMLElement | null = document.getElementById('game-place');
 	const cardsElements: NodeListOf<HTMLElement> =
 		document.querySelectorAll('.card__wrapper');
-	console.log(cardsElements);
 	cardsElements.forEach((cardElement: HTMLElement | null) => {
 		if (difficultyLevel.value === '1' && gamePlace) {
 			gamePlace.style.width = '800px';
